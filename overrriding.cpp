@@ -1,39 +1,43 @@
+/*
+4. Write a Program which illustrates Method Overriding by using three classes.
+*/
+
 #include <iostream>
 using namespace std;
 
-class Animal {
+class ClassA {
 public:
-    virtual void speak() {
-        cout << "Animal makes a sound" << endl;
+    virtual void show() {
+        cout << "This is ClassA." << endl;
     }
 };
 
-class Dog : public Animal {
+class ClassB : public ClassA {
 public:
-    void speak()  {
-        cout << "Dog barks" << endl;
+    void show() override {
+        cout << "This is ClassB." << endl;
     }
 };
 
-class Cat : public Animal {
+class ClassC : public ClassA {
 public:
-    void speak()  {
-        cout << "Cat meows" << endl;
+    void show() override {
+        cout << "This is ClassC." << endl;
     }
 };
 
 int main() {
-    Animal *animal1 = new Animal();
-    Animal *dog = new Dog();
-    Animal *cat = new Cat();
+    ClassA a;
+    ClassB b;
+    ClassC c;
 
-    animal1->speak(); 
-    dog->speak();     
-    cat->speak();     
+    ClassA* ptrA = &a;
+    ClassA* ptrB = &b;
+    ClassA* ptrC = &c;
 
-    delete animal1;
-    delete dog;
-    delete cat;
+    ptrA->show()
+    ptrB->show()
+    ptrC->show()
 
     return 0;
 }
