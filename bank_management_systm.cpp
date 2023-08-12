@@ -1,3 +1,6 @@
+/*
+Array Of Object (Bank Management System) Requirements(A/C Number , A/C Name , A/C Type , A/C Branch , A/C Balance ) Search Record By A/C Number.
+*/
 #include<iostream>
 using namespace std;
 
